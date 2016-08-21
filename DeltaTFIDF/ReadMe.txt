@@ -1,7 +1,13 @@
 @harsh jhamtani
 16 October 2015
-This code generates the delta-tfidf values for a list of documents
-The IDF values are learned using a set of positive labelled documents and a set of negative labelled documents
+
+The usual TFIDF feature values do not take into account the class labels while calculating IDF (~importance) values of tokens in classification tasks.
+Delta TFIDF has been shown to work better than simple TFIDF in binary classification tasks. ( Martineau, Justin, and Tim Finin. "Delta TFIDF: An Improved Feature Space for Sentiment Analysis." ICWSM 9 (2009): 106. )
+
+-------
+
+Accompanying code generates the delta-tfidf values for a list of documents
+The IDF values are learned using a set of positive labelled documents and a set of negative labelled documents.
 
 ----------------------Usage
 First call 'learnIDFScores(list_of_pos,list_of_neg)'
