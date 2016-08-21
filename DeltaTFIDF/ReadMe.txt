@@ -1,7 +1,7 @@
 @harsh jhamtani
 16 October 2015
 
-The usual TFIDF feature values do not take into account the class labels while calculating IDF (~importance) values of tokens in classification tasks.
+The usual TFIDF feature values do not take into account the class labels while calculating IDF (~importance) values of terms in classification tasks.
 Delta TFIDF has been shown to work better than simple TFIDF in binary classification tasks. ( Martineau, Justin, and Tim Finin. "Delta TFIDF: An Improved Feature Space for Sentiment Analysis." ICWSM 9 (2009): 106. )
 
 -------
@@ -52,12 +52,7 @@ For each document, perform following preprocessing steps:
 	- stem : currently using porter's stemming algorithm from nltk
 	- generate bigrams
 	- generate trigrams
-	
-################ TO DO : UPDATE FOLLOWING DESCRIPTION
-Generate idf values
-	- Count the number of documents in which a token occurs : for all tokens
-	- idf (token) = math.log( m / num_of_docs[token]), m = total number of documents
-	
-For each document, generate set of tfidf values
-	- For each token in document, tfidf(token) = tf(token) * idf(token)
-	tf(token) = count(token, doc) / total_num_tokens(doc)
+
+Thereafter calculate Delta IDF values, which takes into account class labels as well.
+
+
